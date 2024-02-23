@@ -1,10 +1,53 @@
 <!DOCTYPE html>
  <html>
   <head>
-   <title>Data Collector for AGOL</title>
+
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" /> 
+    <!-- viewport settings -->
+
+    <title>Data Collector for AGOL</title>
+
+    
+    <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css" /> 
+
+    <!-- MAKING MY MAP FULL SCREEN -->
+    <style>
+        html,
+        body,
+        #viewDiv {
+         padding: 0;
+         margin: 0;
+         height: 100%;
+         width: 100%;
+        }
+    </style>
+
+    <!-- ADDING MODULES -->
+    <script>
+        require([ "esri/config", "esri/Map", "esri/views/MapView" ], ( esriConfig, Map, MapView) => {
+         
+
+        esriConfig.apiKey = "AAPK2cb19acc98eb406b80346e85af5aa1ffagWp07_WJVQlFAY2XL6xGrQ86USz9K6UzB1OaBd37PTIlYdHTo04S0-F9ETbr-dC";
+
+
+         const map = new Map({
+            basemap: "satellite"
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map
+        });
+    });
+
+    </script>
+
   </head>
   <body>
    <!-- hello world text to check if everything worked -->
-   <h1>Hello World! I am ready to collect data.</h1>
+   
+    <div id="viewDiv"></div>
+
   </body>
 </html>
